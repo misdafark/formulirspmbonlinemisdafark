@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<!-- Mirrored from smpdafa.my.id/formulir-spmb/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 14 Jul 2026 05:44:30 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir SPMB</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- jsPDF Library -->
+    <script src="../../cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" integrity="sha512-qZvrmS2ekKPF2mSznTQsxqPgnpkI4DNTlrdUmTzrDgektczlKNRRhy5X5AAOnx5S09ydFYWWNSfcEqDTTHgtNA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- html2canvas Library -->
+    <script src="../../cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>MIS DARUL FALAH</h1>
+        <h2 class="subtitle">Formulir Pendaftaran SPMB</h2>
+        
+        <!-- Progress Indicator -->
+        <div class="progress-container">
+            <div class="progress-step active" data-step="1">
+                <div class="step-number">1</div>
+            </div>
+            <div class="progress-step" data-step="2">
+                <div class="step-number">2</div>
+            </div>
+            <div class="progress-step" data-step="3">
+                <div class="step-number">3</div>
+            </div>
+            <div class="progress-step" data-step="4">
+                <div class="step-number">4</div>
+            </div>
+            <div class="progress-step" data-step="5">
+                <div class="step-number">5</div>
+            </div>
+            <div class="progress-step" data-step="6">
+                <div class="step-number">6</div>
+            </div>
+            <div class="progress-step" data-step="7">
+                <div class="step-number">7</div>
+            </div>
+        </div>
+
+        <form id="spmbForm">
+            <!-- Step 1: Data Diri -->
+            <div class="form-step active" data-step="1">
+                <h2>Data Diri</h2>
+                <p>Lengkapi data diri calon siswa untuk melanjutkan pendaftaran.</p>
+                <div class="form-group">
+                    <label for="nama">Nama Lengkap <span class="required">*</span></label>
+                    <input type="text" id="nama" name="nama" placeholder="Nama Lengkap" required>
+                </div>
+                <div class="form-group">
+                    <label for="nisn">NISN <span class="required">*</span></label>
+                    <input type="text" id="nisn" name="nisn" placeholder="Nomor Induk Siswa Nasional" required>
+                </div>
+                <div class="form-group">
+                    <label for="tempatLahir">Tempat Lahir <span class="required">*</span></label>
+                    <input type="text" id="tempatLahir" name="tempatLahir" placeholder="Kota/Kabupaten" required>
+                </div>
+                <div class="form-group">
+                    <label for="tanggalLahir">Tanggal Lahir <span class="required">*</span></label>
+                    <input type="date" id="tanggalLahir" name="tanggalLahir" required>
+                </div>
+                <div class="form-group">
+                    <label for="jenisKelamin">Jenis Kelamin <span class="required">*</span></label>
+                    <select id="jenisKelamin" name="jenisKelamin" required>
+                        <option value="">Pilih Jenis Kelamin</option>
+                        <option value="Laki-laki">Laki-laki</option>
+                        <option value="Perempuan">Perempuan</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Step 2: Data Keluarga -->
+            <div class="form-step" data-step="2">
+                <h2>Data Keluarga</h2>
+                <p>Lengkapi data keluarga kita melanjutkan pendaftaran.</p>
+                <div class="form-group">
+                    <label for="agama">Agama <span class="required">*</span></label>
+                    <select id="agama" name="agama" required>
+                        <option value="">Pilih Agama</option>
+                        <option value="Islam">Islam</option>
+                        <option value="Kristen">Kristen</option>
+                        <option value="Katolik">Katolik</option>
+                        <option value="Hindu">Hindu</option>
+                        <option value="Buddha">Buddha</option>
+                        <option value="Konghucu">Konghucu</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="statusKeluarga">Status dalam Keluarga <span class="required">*</span></label>
+                    <select id="statusKeluarga" name="statusKeluarga" required>
+                        <option value="">Pilih Status</option>
+                        <option value="Anak Kandung">Anak Kandung</option>
+                        <option value="Anak Tiri">Anak Tiri</option>
+                        <option value="Anak Angkat">Anak Angkat</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="anakKe">Anak Ke- <span class="required">*</span></label>
+                    <input type="number" id="anakKe" name="anakKe" min="1" placeholder="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="alamat">Alamat Rumah Lengkap <span class="required">*</span></label>
+                    <textarea id="alamat" name="alamat" rows="4" placeholder="Jalan, RT/RW, Kelurahan, Kecamatan, Kota/Kabupaten, Provinsi" required></textarea>
+                </div>
+            </div>
+
+            <!-- Step 3: Kontak & Sekolah -->
+            <div class="form-step" data-step="3">
+                <h2>Sekolah Asal</h2>
+                <p>Lengkapi data sekolah asal untuk melanjutkan pendaftaran.</p>
+                <div class="form-group">
+                    <label for="nomorHP">Nomor HP/WA <span class="required">*</span></label>
+                    <input type="tel" id="nomorHP" name="nomorHP" placeholder="08xxxxxxxxxx" required>
+                </div>
+                <div class="form-group">
+                    <label for="sekolahAsal">Sekolah Asal <span class="required">*</span></label>
+                    <input type="text" id="sekolahAsal" name="sekolahAsal" placeholder="Nama Sekolah" required>
+                </div>
+                <div class="form-group">
+                    <label for="nomorKK">Nomor Kartu Keluarga <span class="required">*</span></label>
+                    <input type="text" id="nomorKK" name="nomorKK" placeholder="16 digit" required>
+                </div>
+            </div>
+
+            <!-- Step 4: Data Ayah -->
+            <div class="form-step" data-step="4">
+                <h2>Data Ayah</h2>
+                <p>Lengkapi data ayah untuk melanjutkan pendaftaran.</p>
+                <div class="form-group">
+                    <label for="nikAyah">NIK Ayah <span class="required">*</span></label>
+                    <input type="text" id="nikAyah" name="nikAyah" placeholder="16 digit" required>
+                </div>
+                <div class="form-group">
+                    <label for="namaAyah">Nama Ayah <span class="required">*</span></label>
+                    <input type="text" id="namaAyah" name="namaAyah" placeholder="Nama Lengkap" required>
+                </div>
+                <div class="form-group">
+                    <label for="pekerjaanAyah">Pekerjaan Ayah <span class="required">*</span></label>
+                    <input type="text" id="pekerjaanAyah" name="pekerjaanAyah" placeholder="Pekerjaan" required>
+                </div>
+                <div class="form-group">
+                    <label for="pendidikanAyah">Pendidikan Terakhir Ayah <span class="required">*</span></label>
+                    <select id="pendidikanAyah" name="pendidikanAyah" required>
+                        <option value="">Pilih Pendidikan</option>
+                        <option value="SD">SD</option>
+                        <option value="SMP">SMP</option>
+                        <option value="SMA/SMK">SMA/SMK</option>
+                        <option value="D3">D3</option>
+                        <option value="S1">S1</option>
+                        <option value="S2">S2</option>
+                        <option value="S3">S3</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Step 5: Data Ibu -->
+            <div class="form-step" data-step="5">
+                <h2>Data Ibu</h2>
+                <p>Lengkapi data ibu untuk melanjutkan pendaftaran.</p>
+                <div class="form-group">
+                    <label for="nikIbu">NIK Ibu <span class="required">*</span></label>
+                    <input type="text" id="nikIbu" name="nikIbu" placeholder="16 digit" required>
+                </div>
+                <div class="form-group">
+                    <label for="namaIbu">Nama Ibu <span class="required">*</span></label>
+                    <input type="text" id="namaIbu" name="namaIbu" placeholder="Nama Lengkap" required>
+                </div>
+                <div class="form-group">
+                    <label for="pekerjaanIbu">Pekerjaan Ibu <span class="required">*</span></label>
+                    <input type="text" id="pekerjaanIbu" name="pekerjaanIbu" placeholder="Pekerjaan" required>
+                </div>
+                <div class="form-group">
+                    <label for="pendidikanIbu">Pendidikan Terakhir Ibu <span class="required">*</span></label>
+                    <select id="pendidikanIbu" name="pendidikanIbu" required>
+                        <option value="">Pilih Pendidikan</option>
+                        <option value="SD">SD</option>
+                        <option value="SMP">SMP</option>
+                        <option value="SMA/SMK">SMA/SMK</option>
+                        <option value="D3">D3</option>
+                        <option value="S1">S1</option>
+                        <option value="S2">S2</option>
+                        <option value="S3">S3</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Step 6: Kontak Orang Tua -->
+            <div class="form-step" data-step="6">
+                <h2>Kontak Orang Tua</h2>
+                <p>Masukkan nomor HP/WA orang tua yang bisa dihubungi.</p>
+                <div class="form-group">
+                    <label for="nomorHPOrtu">Nomor HP/WA Orang Tua <span class="required">*</span></label>
+                    <input type="tel" id="nomorHPOrtu" name="nomorHPOrtu" placeholder="08xxxxxxxxxx" required>
+                </div>
+            </div>
+
+            <!-- Step 7: Foto Selfie -->
+            <div class="form-step" data-step="7">
+                <h2>Upload Foto</h2>
+                <p>Ambil foto selfie diri anda dengan jelas agar mudah terlihat dengan jelas dan dapat terlihat dengan jelas.</p>
+                <div class="form-group">
+                    <label for="fotoSelfie">Upload Foto Selfie <span class="required">*</span></label>
+                    <input type="file" id="fotoSelfie" name="fotoSelfie" accept="image/*" required>
+                    <div id="imagePreview" class="image-preview"></div>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="form-navigation">
+                <button type="button" id="prevBtn" class="btn btn-secondary">← Previous</button>
+                <button type="button" id="nextBtn" class="btn btn-primary">Lanjut →</button>
+                <button type="submit" id="submitBtn" class="btn btn-success" style="display: none;">Selesai ✓</button>
+            </div>
+        </form>
+
+        <!-- Success Modal -->
+        <div id="successModal" class="modal">
+            <div class="modal-content">
+                <h2>✓ Pendaftaran Berhasil!</h2>
+                <p>Data Anda telah tersimpan. Silakan pilih opsi berikut:</p>
+                <div class="modal-buttons">
+                    <button id="downloadPdfBtn" class="btn btn-primary">Download PDF</button>
+                    <button id="closeModalBtn" class="btn btn-secondary">Tutup</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- PDF Template (Hidden) -->
+        <div id="pdfTemplate" class="pdf-template">
+            <div class="pdf-header">
+                <h1>FORMULIR PENDAFTARAN PESERTA DIDIK BARU</h1>
+                <h2>TAHUN PELAJARAN 2027-2028</h2>
+            </div>
+            
+            <div class="pdf-content">
+                <!-- Section A: Data Calon Peserta Didik -->
+                <div class="pdf-section">
+                    <div class="pdf-section-title">A. KETERANGAN CALON PESERTA DIDIK</div>
+                    <table class="pdf-table">
+                        <tbody>
+                            <tr>
+                                <td class="number">1.</td>
+                                <td class="label">Nama Lengkap</td>
+                                <td class="colon">:</td>
+                                <td class="value"><span id="pdf-nama"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="number">2.</td>
+                                <td class="label">NISN</td>
+                                <td class="colon">:</td>
+                                <td class="value"><span id="pdf-nisn"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="number">3.</td>
+                                <td class="label">Tempat, Tanggal Lahir</td>
+                                <td class="colon">:</td>
+                                <td class="value"><span id="pdf-ttl"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="number">4.</td>
+                                <td class="label">Jenis Kelamin</td>
+                                <td class="colon">:</td>
+                                <td class="value"><span id="pdf-jenisKelamin"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="number">5.</td>
+                                <td class="label">Agama</td>
+                                <td class="colon">:</td>
+                                <td class="value"><span id="pdf-agama"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="number">6.</td>
+                                <td class="label">Alamat</td>
+                                <td class="colon">:</td>
+                                <td class="value"><span id="pdf-alamat"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="number">7.</td>
+                                <td class="label">Status dalam Keluarga</td>
+                                <td class="colon">:</td>
+                                <td class="value"><span id="pdf-statusKeluarga"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="number">8.</td>
+                                <td class="label">Anak ke</td>
+                                <td class="colon">:</td>
+                                <td class="value"><span id="pdf-anakKe"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="number">9.</td>
+                                <td class="label">Alamat Rumah lengkap</td>
+                                <td class="colon">:</td>
+                                <td class="value"><span id="pdf-alamat2"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="number">10.</td>
+                                <td class="label">No. HP</td>
+                                <td class="colon">:</td>
+                                <td class="value"><span id="pdf-nomorHP"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="number">11.</td>
+                                <td class="label">Asal Sekolah</td>
+                                <td class="colon">:</td>
+                                <td class="value"><span id="pdf-sekolahAsal"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="number">12.</td>
+                                <td class="label">Nomor Kartu Keluarga</td>
+                                <td class="colon">:</td>
+                                <td class="value"><span id="pdf-nomorKK"></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Section B: Data Orang Tua -->
+                <div class="pdf-section">
+                    <div class="pdf-section-title">B. KETERANGAN ORANG TUA *)</div>
+                    
+                    <div class="pdf-subsection-title">DATA AYAH</div>
+                    <table class="pdf-table">
+                        <tbody>
+                            <tr>
+                                <td class="number">1.</td>
+                                <td class="label">NIK</td>
+                                <td class="colon">:</td>
+                                <td class="value"><span id="pdf-nikAyah"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="number">2.</td>
+                                <td class="label">Nama</td>
+                                <td class="colon">:</td>
+                                <td class="value"><span id="pdf-namaAyah"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="number">3.</td>
+                                <td class="label">Pekerjaan</td>
+                                <td class="colon">:</td>
+                                <td class="value"><span id="pdf-pekerjaanAyah"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="number">4.</td>
+                                <td class="label">Pendidikan</td>
+                                <td class="colon">:</td>
+                                <td class="value"><span id="pdf-pendidikanAyah"></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="pdf-subsection-title">DATA IBU</div>
+                    <table class="pdf-table">
+                        <tbody>
+                            <tr>
+                                <td class="number">1.</td>
+                                <td class="label">NIK</td>
+                                <td class="colon">:</td>
+                                <td class="value"><span id="pdf-nikIbu"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="number">2.</td>
+                                <td class="label">Nama</td>
+                                <td class="colon">:</td>
+                                <td class="value"><span id="pdf-namaIbu"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="number">3.</td>
+                                <td class="label">Pekerjaan</td>
+                                <td class="colon">:</td>
+                                <td class="value"><span id="pdf-pekerjaanIbu"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="number">4.</td>
+                                <td class="label">Pendidikan</td>
+                                <td class="colon">:</td>
+                                <td class="value"><span id="pdf-pendidikanIbu"></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Signature Section -->
+                <div class="pdf-signature-area">
+                    <div class="pdf-photo-container">
+                        <div class="pdf-photo-box">
+                            <img id="pdf-foto" src="#" alt="Foto 3x4">
+                        </div>
+                    </div>
+                    <div class="pdf-signature-info">
+                        <div class="pdf-location-date">Bondowoso, <span id="pdf-tanggal-short"></span> 2026</div>
+                        <div class="pdf-signature-label">Calon Peserta Didik</div>
+                        <div class="pdf-signature-line"></div>
+                        <div class="pdf-signature-name">Tanda Tangan & Nama Lengkap</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+<!-- Mirrored from smpdafa.my.id/formulir-spmb/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 14 Jul 2026 05:44:31 GMT -->
+</html>
